@@ -17,7 +17,6 @@ namespace BlackJack.Tests {
             var rnd = new Random();
             game = new Game();
             deckList = game.Deck;
-
         }
 
 
@@ -25,7 +24,7 @@ namespace BlackJack.Tests {
         public void HandTest()
         {
 
-            var hand = game.DealNewHand();
+            var hand = game.DealNewHand(2);
             var testCard = hand[0];
 
             Assert.IsFalse(game.Deck.Contains(testCard));
@@ -81,7 +80,7 @@ namespace BlackJack.Tests {
         [TestMethod]
         public void HitMeTest()
         {
-            var testHand = game.DealNewHand();
+            var testHand = game.DealNewHand(2);
 
             var handAfterHit = game.HitMe(testHand);
 

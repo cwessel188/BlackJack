@@ -10,7 +10,7 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
-            while (true)
+            while (true) // starts the game loop
             {
                 Console.Clear();
                 Game game = new Game();

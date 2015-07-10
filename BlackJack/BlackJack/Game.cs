@@ -8,15 +8,13 @@ namespace BlackJack
 {
     public class Game
     {
-
+        public List<Card> Deck { get; set; }
+        
         public Game()
         {
             Deck = CreateDeckasList();
-
         }
-
-        public List<Card> Deck { get; set; }
-
+        
         /// <summary>
         /// Creates a deck
         /// </summary>
@@ -51,10 +49,10 @@ namespace BlackJack
         /// <summary>
         /// Uses the deck to get a new hand of two cards
         /// </summary>
+        /// <param cardsinHand>the number of cards in the hand</param>
         /// <returns>a hand of two cards</returns>
-        public List<Card> DealNewHand()
+        public List<Card> DealNewHand(int cardsInHand)
         {
-            const int cardsInHand = 2;
             var rnd = new Random();
             var hand = new List<Card>();
             var temp = new Card();
@@ -134,8 +132,8 @@ namespace BlackJack
 
             Console.WriteLine("****** Welcome to BlackJack!! ******\n");
 
-            var playerHand = DealNewHand();
-            var dealerHand = DealNewHand();
+            var playerHand = DealNewHand(2);
+            var dealerHand = DealNewHand(2);
 
             // write the dealer's hand
             Console.Write("The Dealer's hand: ");
